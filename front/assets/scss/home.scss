@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  width: 96%;
+  height: 112px;
+  background-color: #272727;
+  border-radius: 24px;
+  margin-top: 1%;
+  margin-left: 2%;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    background-color: #E2B83A;
+    border-radius: 16px;
+    width: 22%;
+    height: 52px;
+    margin-right: 2%;
+  }
+  img {
+    margin-left: 2%;
+  }
+}
+
+div{
+  margin-top: 3%;
+  #info {
+    display:flex;
+    align-items: center;
+    margin-top: 5%;
+    img {
+      width: 50%
+    }
+    h2 {
+      margin-top: 1%;
+    }
+  }
+}

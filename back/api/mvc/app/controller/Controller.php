@@ -27,17 +27,35 @@
       Require_once ROOT . '/api/mvc/app/view/' . $template . '.php';
     }
 
-    protected function renderJson($variables) {
-      if (!isset($_GET['api'])) {
-        ob_start();
-        extract($variables);
-        ob_get_clean();
-      } else {
+    protected function renderJson($variables, $name) {
+      if (isset($_GET['api'])) {
         header('Content-Type: application/json');
         $json = json_encode($variables, JSON_FORCE_OBJECT);
         echo $json;
+        return false;
+      }
+      ob_start();
+      extract($variables);
+      ob_get_clean();
+    }
+
+    protected function checkConnection($users) {
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        header('Content-type: application/json; charset=utf-8');
+        $rawPaylaod = file_get_contents('php://input');
+        try {
+          $payload = json_decode($rawPaylaod, true);
+          if ($users['user']['login'] == $payload['pseudo'] && $users['user']['password'] == $payload['mdp']) {
+            echo true;
+          } else {
+            echo false;
+          }
+        } catch (Exception $e) {
+            die(json_encode(['error' => 'Payload problem.']));
+        }
+
+      //  echo json_encode(['echo' => $payload,]);
       }
     }
-  }
-
+}
 ?>

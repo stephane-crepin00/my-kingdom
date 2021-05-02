@@ -31,16 +31,23 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+  //  '@nuxtjs/proxy',
   ],
+
+  // proxy: {
+  //   '/check-connexion': 'http://my-kingdom.com/?api=connexion',
+  // },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

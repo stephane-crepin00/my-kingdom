@@ -1,4 +1,4 @@
-<?php
+<?php header('Access-Control-Allow-Origin: *');
 
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
@@ -6,19 +6,20 @@
 	define('ROOT', dirname(__DIR__));
 	define('WEBSITE_URL', 'http://my-kingdom.com/');
 
-	Require_once ROOT . '/api/mvc/app/Autoloader.php';
+	Require_once ROOT . '/app/Autoloader.php';
 	app\Autoloader::register();
 
-	 $page = 'home';
+	 $page = 'connexion';
 
-	 if (isset($_GET['page'])) {
-		 $page = $_GET['page'];
+	 if (isset($_GET['pag'])) {
+		 $page = $_GET['api'];
 	 }
 
 	 $nameController = 'app\controller\\'.ucfirst($page).'Controller';
 
 	 if (!class_exists($nameController) || !method_exists($nameController, 'render')){
 	     header('Location: '.WEBSITE_URL);
+			 // header('Content-type: application/json; charset=utf-8');
 	 }
 
 	$controller = new $nameController;

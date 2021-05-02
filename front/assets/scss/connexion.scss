@@ -1,0 +1,46 @@
+#content {
+  width: 50%;
+  margin: 0 auto;
+  img{
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: -5%;
+  }
+}
+
+#form {
+    background-color: #59616D;
+    h1 {
+      padding-top: 10%;
+    }
+    form {
+      margin-top: 5%;
+      p {
+          display: flex;
+          flex-direction: column;
+          margin-top: 3%;
+          align-items: center;
+          justify-content: center;
+          label {
+            margin-bottom: 2%;
+          }
+      }
+    }
+    #submit {
+      background-color: #E2B83A;
+      border-radius: 16px;
+      width: 22%;
+      height: 52px;
+      margin-right: 2%;
+    }
+}
+
+button {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #E2B83A;
+  border-radius: 16px;
+  width: 22%;
+  height: 52px;
+  margin-right: 2%;
+}
